@@ -59,7 +59,7 @@ fi
 ### Install all of the above pacakges ####
 read -n1 -rep 'Would you like to install the packages? (y,n)' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
-    yay -S --noconfirm hyprland alacritty waybar \
+    yay -S --noconfirm hyprland alacritty tmux zsh waybar \
     cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python \
     swaybg swaylock-effects wofi wlogout mako thunar \
     ttf-jetbrains-mono-nerd noto-fonts-emoji \
