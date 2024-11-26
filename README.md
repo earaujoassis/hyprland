@@ -2,8 +2,8 @@
 
 > Hyprland installation and configuration
 
-A fork from [SolDoesTech/hyprland](SolDoesTech/hyprland) with a
-collection of configuration files for hyprland with a simple install
+A fork from [SolDoesTech/hyprland](https://github.com/SolDoesTech/hyprland)
+with a collection of configuration files for hyprland with a simple install
 script for a fresh Arch Linux with yay.
 
 ## Install & Setup
