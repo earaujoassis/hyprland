@@ -10,8 +10,7 @@ script for a fresh Arch Linux with yay.
 
 ```sh
 $ git clone https://github.com/earaujoassis/hyprland.git ~/hyprland
-$ cd ~/hyprland
-$ ./setup-hyprland.sh
+$ ~/hyprland/setup-hyprland.sh
 ```
 
 ## License

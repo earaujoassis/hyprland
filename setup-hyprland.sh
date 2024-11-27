@@ -7,6 +7,8 @@
 # A list of packages installed is available at packages.md.
 #
 
+export HYPRLAND_HOME=$HOME/hyprland
+export CFG_FOLDER=$HOME/.config
 
 #### Check for yay ####
 ISYAY=/sbin/yay
@@ -62,18 +64,18 @@ fi
 read -n1 -rep '> Would you like to copy all configuration files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
-    cp -R hypr ~/.config/
-    cp -R alacritty ~/.config/
-    cp -R mako ~/.config/
-    cp -R waybar ~/.config/
-    cp -R wofi ~/.config/
-    cp -R wlogout ~/.config/
-    cp electron/electron-flags.conf ~/.config/
+    cp -R $HYPRLAND_HOME/hypr $CFG_FOLDER/
+    cp -R $HYPRLAND_HOME/alacritty $CFG_FOLDER/
+    cp -R $HYPRLAND_HOME/mako $CFG_FOLDER/
+    cp -R $HYPRLAND_HOME/waybar $CFG_FOLDER/
+    cp -R $HYPRLAND_HOME/wofi $CFG_FOLDER/
+    cp -R $HYPRLAND_HOME/wlogout $CFG_FOLDER/
+    cp $HYPRLAND_HOME/electron/electron-flags.conf $CFG_FOLDER/
     echo "> WARNING Safely place extra-flags for spotify-launcher (check electron/spotify-launcher.conf)"
     
     # Set some files as exacutable 
-    chmod +x ~/.config/hypr/xdg-portal-hyprland
-    chmod +x ~/.config/waybar/scripts/waybar-wttr.py
+    chmod +x $CFG_FOLDER/hypr/xdg-portal-hyprland
+    chmod +x $CFG_FOLDER/waybar/scripts/waybar-wttr.py
 fi
 
 ### Install the starship shell ###
@@ -83,8 +85,8 @@ if [[ $STAR == "Y" || $STAR == "y" ]]; then
     yay -S --noconfirm starship
     echo -e "> Updating .bashrc to load starship...\n"
     echo -e '\neval "$(starship init bash)"' >> ~/.bashrc
-    echo -e "> Copying starship config file to ~/.confg ...\n"
-    cp starship/starship.toml ~/.config/
+    echo -e "> Copying starship config file to $CFG_FOLDER ...\n"
+    cp starship/starship.toml $CFG_FOLDER/
 fi
 
 ### Script is complete ###
