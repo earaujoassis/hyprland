@@ -40,7 +40,7 @@
     },
 
     "custom/power": {
-        "format":"",
+        "format": "<big></big>",
         "on-click": "wlogout --protocol layer-shell",
         "tooltip-format": ""
     },
