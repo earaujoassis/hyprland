@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # The follwoing will attempt to install all needed packages to run Hyprland.
 # This is a quick and dirty script, there is no error checking.
@@ -10,52 +10,56 @@
 
 #### Check for yay ####
 ISYAY=/sbin/yay
-if [ -f "$ISYAY" ]; then 
-    echo -e "yay was located, moving on.\n"
+if [ -f "$ISYAY" ]
+then 
+    echo -e "> yay is available.\n"
     yay -Suy
 else 
-    echo -e "yay was not located, please install yay. Exiting script.\n"
+    echo -e "> yay is not available, please install yay. Exiting script.\n"
     exit 
 fi
 
-### Disable wifi powersave mode ###
-read -n1 -rep 'Would you like to disable wifi powersave? (y,n) ' WIFI
-if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
+### Disable Wi-Fi powersave mode ###
+read -n1 -rep '> Would you like to disable Wi-Fi powersave? (y,n) ' WIFI
+if [[ $WIFI == "Y" || $WIFI == "y" ]]
+then
     LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
-    echo -e "The following has been added to $LOC.\n"
-    echo -e "[connection]\nwifi.powersave = 2" | sudo tee -a $LOC
+    echo -e "> The following has been added to $LOC.\n"
+    echo -e "> [connection]\nwifi.powersave = 2" | sudo tee -a $LOC
     echo -e "\n"
-    echo -e "Restarting NetworkManager service...\n"
+    echo -e "> Restarting NetworkManager service...\n"
     sudo systemctl restart NetworkManager
     sleep 3
 fi
 
-### Install all of the above pacakges ####
-read -n1 -rep 'Would you like to install the packages? (y,n) ' INST
-if [[ $INST == "Y" || $INST == "y" ]]; then
+### Install all of the the necessary packages ####
+read -n1 -rep '> Would you like to install all the necessary packages? (y,n) ' INSTALL
+if [[ $INSTALL == "Y" || $INSTALL == "y" ]]
+then
+    echo -e "> Installing all necessary packages through yay"
     yay -S --noconfirm code htop btop tmux zsh less kitty chromium \
     gtk-engine-murrine xsel sof-firmware uwsm \
     hyprland hyprlock hypridle alacritty enpass gtk2-engines waybar \
     cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python \
     swaybg wofi wlogout mako thunar \
     ttf-jetbrains-mono-nerd ttf-fira-sans ttf-font-awesome noto-fonts-emoji \
-    polkit-gnome python-requests starship \
+    polkit-gnome python-requests \
     swappy grim slurp pamixer brightnessctl gvfs \
     bluez bluez-utils lxappearance xfce4-settings \
     dracula-gtk-theme dracula-icons-git xdg-desktop-portal-hyprland
 
     # Start the bluetooth service
-    echo -e "Starting the Bluetooth Service...\n"
+    echo -e "> Starting the Bluetooth Service...\n"
     sudo systemctl enable --now bluetooth.service
     sleep 2
     
     # Clean out other portals
-    echo -e "Cleaning out conflicting xdg portals...\n"
+    echo -e "> Cleaning out conflicting xdg portals...\n"
     yay -R --noconfirm xdg-desktop-portal-gnome xdg-desktop-portal-gtk
 fi
 
-### Copy Config Files ###
-read -n1 -rep 'Would you like to copy config files? (y,n) ' CFG
+### Copy configuration files ###
+read -n1 -rep '> Would you like to copy all configuration files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
     cp -R hypr ~/.config/
@@ -72,21 +76,22 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     chmod +x ~/.config/waybar/scripts/waybar-wttr.py
 fi
 
-### Install teh starship shell ###
-read -n1 -rep 'Would you like to install the starship shell? (y,n) ' STAR
+### Install the starship shell ###
+read -n1 -rep '> Would you like to install starship? (y,n) ' STAR
 if [[ $STAR == "Y" || $STAR == "y" ]]; then
-    # install the starship shell
-    echo -e "Updating .bashrc...\n"
+    echo -e "> Installing starship...\n"
+    yay -S --noconfirm starship
+    echo -e "> Updating .bashrc to load starship...\n"
     echo -e '\neval "$(starship init bash)"' >> ~/.bashrc
-    echo -e "copying starship config file to ~/.confg ...\n"
+    echo -e "> Copying starship config file to ~/.confg ...\n"
     cp starship/starship.toml ~/.config/
 fi
 
-### Script is done ###
-echo -e "Script had completed.\n"
-echo -e "You can start Hyprland by typing Hyprland (note the capital H).\n"
-read -n1 -rep 'Would you like to start Hyprland now? (y,n) ' HYP
-if [[ $HYP == "Y" || $HYP == "y" ]]; then
+### Script is complete ###
+echo -e "> Script has completed.\n"
+echo -e "> You can start Hyprland by typing 'Hyprland' on terminal.\n"
+read -n1 -rep '> Would you like to start Hyprland now? (y,n) ' HYP
+if [[ $HYPRLAND == "Y" || $HYPRLAND == "y" ]]; then
     exec Hyprland
 else
     exit

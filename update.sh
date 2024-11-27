@@ -1,9 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ### Update Config Files ###
-read -n1 -rep 'Would you like to copy config files? (y,n) ' CFG
-if [[ $CFG == "Y" || $CFG == "y" ]]; then
-    echo -e "Copying config files...\n"
+read -n1 -rep '> Would you like to update all configuration files? (y,n) ' CFG
+if [[ $CFG == "Y" || $CFG == "y" ]]
+then
+    echo -e "> Updating config files...\n"
     cp -fR hypr ~/.config/
     cp -fR alacritty ~/.config/
     cp -fR mako ~/.config/
