@@ -11,6 +11,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -fR wofi ~/.config/
     cp -fR wlogout ~/.config/
     cp -f starship/starship.toml ~/.config/
+    cp -f electron/electron-flags.conf ~/.config/
     
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/xdg-portal-hyprland

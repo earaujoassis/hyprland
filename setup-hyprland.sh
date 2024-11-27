@@ -33,9 +33,9 @@ fi
 ### Install all of the above pacakges ####
 read -n1 -rep 'Would you like to install the packages? (y,n) ' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
-    sudo pacman -S code htop btop tmux zsh less kitty chromium \
-    gtk-engine-murrine xsel sof-firmware
-    yay -S --noconfirm hyprland hyprlock hypridle alacritty enpass gtk2-engines waybar \
+    yay -S --noconfirm code htop btop tmux zsh less kitty chromium \
+    gtk-engine-murrine xsel sof-firmware uwsm \
+    hyprland hyprlock hypridle alacritty enpass gtk2-engines waybar \
     cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python \
     swaybg wofi wlogout mako thunar \
     ttf-jetbrains-mono-nerd ttf-fira-sans ttf-font-awesome noto-fonts-emoji \
@@ -64,6 +64,8 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -R waybar ~/.config/
     cp -R wofi ~/.config/
     cp -R wlogout ~/.config/
+    cp electron/electron-flags.conf ~/.config/
+    echo "> WARNING Safely place extra-flags for spotify-launcher (check electron/spotify-launcher.conf)"
     
     # Set some files as exacutable 
     chmod +x ~/.config/hypr/xdg-portal-hyprland
