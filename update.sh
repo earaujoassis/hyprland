@@ -10,6 +10,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     cp -fR waybar ~/.config/
     cp -fR swaylock ~/.config/
     cp -fR wofi ~/.config/
+    cp -fR wlogout ~/.config/
     cp -f starship/starship.toml ~/.config/
     
     # Set some files as exacutable 
