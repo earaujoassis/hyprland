@@ -19,7 +19,7 @@ else
 fi
 
 ### Disable wifi powersave mode ###
-read -n1 -rep 'Would you like to disable wifi powersave? (y,n)' WIFI
+read -n1 -rep 'Would you like to disable wifi powersave? (y,n) ' WIFI
 if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
     LOC="/etc/NetworkManager/conf.d/wifi-powersave.conf"
     echo -e "The following has been added to $LOC.\n"
@@ -31,14 +31,14 @@ if [[ $WIFI == "Y" || $WIFI == "y" ]]; then
 fi
 
 ### Install all of the above pacakges ####
-read -n1 -rep 'Would you like to install the packages? (y,n)' INST
+read -n1 -rep 'Would you like to install the packages? (y,n) ' INST
 if [[ $INST == "Y" || $INST == "y" ]]; then
     sudo pacman -S code htop btop tmux zsh less kitty chromium \
     gtk-engine-murrine xsel sof-firmware
-    yay -S --noconfirm hyprland alacritty enpass gtk2-engines waybar \
+    yay -S --noconfirm hyprland hyprlock hypridle alacritty enpass gtk2-engines waybar \
     cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python \
-    swaybg swaylock-effects wofi wlogout mako thunar \
-    ttf-jetbrains-mono-nerd noto-fonts-emoji \
+    swaybg wofi wlogout mako thunar \
+    ttf-jetbrains-mono-nerd ttf-fira-sans ttf-font-awesome noto-fonts-emoji \
     polkit-gnome python-requests starship \
     swappy grim slurp pamixer brightnessctl gvfs \
     bluez bluez-utils lxappearance xfce4-settings \
@@ -55,14 +55,13 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 fi
 
 ### Copy Config Files ###
-read -n1 -rep 'Would you like to copy config files? (y,n)' CFG
+read -n1 -rep 'Would you like to copy config files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
     cp -R hypr ~/.config/
     cp -R alacritty ~/.config/
     cp -R mako ~/.config/
     cp -R waybar ~/.config/
-    cp -R swaylock ~/.config/
     cp -R wofi ~/.config/
     cp -R wlogout ~/.config/
     
@@ -72,7 +71,7 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
 fi
 
 ### Install teh starship shell ###
-read -n1 -rep 'Would you like to install the starship shell? (y,n)' STAR
+read -n1 -rep 'Would you like to install the starship shell? (y,n) ' STAR
 if [[ $STAR == "Y" || $STAR == "y" ]]; then
     # install the starship shell
     echo -e "Updating .bashrc...\n"
@@ -84,7 +83,7 @@ fi
 ### Script is done ###
 echo -e "Script had completed.\n"
 echo -e "You can start Hyprland by typing Hyprland (note the capital H).\n"
-read -n1 -rep 'Would you like to start Hyprland now? (y,n)' HYP
+read -n1 -rep 'Would you like to start Hyprland now? (y,n) ' HYP
 if [[ $HYP == "Y" || $HYP == "y" ]]; then
     exec Hyprland
 else

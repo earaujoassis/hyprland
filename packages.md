@@ -4,7 +4,6 @@
 - alacritty: This is the default terminal
 - waybar: Waybar now has hyprland support
 - swaybg: This is used to set a desktop background image
-- swaylock-effects: This allows for the locking of the desktop its a fork that adds some editional visual effects
 - wofi: This is an application launcher menu
 - wlogout: This is a logout menu that allows for shutdown, reboot and sleep
 - mako: This is a graphical notification daemon
@@ -27,3 +26,8 @@
 - dracula-gtk-theme: the Dracula theme, it fits the overall look and feel
 - dracula-icons-git" set of icons to go with the Dracula theme
 - xdg-desktop-portal-hyprland: xdg-desktop-portal backend for hyprland
+
+## Deprecated packages
+
+- swaylock was replaced by hyprlock
+- swaylock-effects

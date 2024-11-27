@@ -3,7 +3,7 @@
     border-radius: 0;
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     min-height: 0;
 }
 
@@ -50,6 +50,7 @@ tooltip {
 
 #custom-power_profile,
 #custom-weather,
+#custom-power,
 #window,
 #clock,
 #battery,
@@ -95,8 +96,8 @@ tooltip {
 
 #window {
     border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #clock {
@@ -130,7 +131,6 @@ tooltip {
     border-left: 0px;
     border-right: 0px;
     border-radius: 0px 10px 10px 0px;
-    margin-right: 10px;
 }
 
 #battery {
@@ -144,4 +144,10 @@ tooltip {
     border-radius: 0px 10px 10px 0px;
     border-right: 0px;
     margin-left: 0px;
+}
+
+#custom-power {
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
