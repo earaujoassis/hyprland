@@ -73,8 +73,8 @@ def which_weather_icon(weather_code, local_time_str, astronomy_data):
     local_time = datetime.strptime(local_time_str, "%Y-%m-%d %I:%M %p").time()
     sunrise_time = datetime.strptime(astronomy_data['sunrise'], "%I:%M %p").time()
     sunset_time = datetime.strptime(astronomy_data['sunset'], "%I:%M %p").time()
-    
-    if local_time > sunset_time or local_time < sunrise_time:
+
+    if local_time > sunset_time and local_time < sunrise_time:
         moon_phase = astronomy_data['moon_phase']
         return MOON_PHASES[moon_phase]
     else:
