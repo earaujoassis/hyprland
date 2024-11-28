@@ -63,14 +63,14 @@ tooltip {
 #backlight {
     background: #1e1e2e;
     opacity: 0.8;
-    padding: 0px 10px;
-    margin: 3px 0px;
+    padding: 0 10px;
+    margin: 3px 0;
     margin-top: 10px;
     border: 1px solid #181825;
 }
 
 #temperature {
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 0;
 }
 
 #temperature.critical {
@@ -78,78 +78,83 @@ tooltip {
 }
 
 #backlight {
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 0;
 }
 
 #tray {
-    border-radius: 10px;
-    margin-right: 10px;
+    border-radius: 10px 0 0 10px;
 }
 
 #workspaces {
     background: #1e1e2e;
     border-radius: 10px;
     margin-left: 10px;
-    padding-right: 0px;
+    padding-right: 0;
     padding-left: 5px;
 }
 
 #window {
     border-radius: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+    border-color: transparent;
 }
 
 #clock {
     color: #fab387;
-    border-radius: 10px 0px 0px 10px;
-    margin-left: 10px;
-    border-right: 0px;
+    border-radius: 0;
+    border-right: 0;
 }
 
 #network {
     color: #f9e2af;
-    border-radius: 10px 0px 0px 10px;
-    border-left: 0px;
-    border-right: 0px;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
 }
 
 #bluetooth {
     color: #89b4fa;
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 10px
+    border-radius: 0;
+    margin-right: 0;
+    border-right: 0;
+    border-left: 0;
 } 
 
 #pulseaudio {
     color: #89b4fa;
-    border-left: 0px;
-    border-right: 0px;
+    border-left: 0;
+    border-right: 0;
 }
 
 #pulseaudio.microphone {
     color: #cba6f7;
-    border-left: 0px;
-    border-right: 0px;
-    border-radius: 0px 10px 10px 0px;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
 }
 
 #battery {
     color: #a6e3a1;
-    border-radius: 0 10px 10px 0;
-    margin-right: 10px;
-    border-left: 0px;
+    border-radius: 0;
+    margin-right: 0;
+    border-left: 0;
+    border-right: 0;
 }
 
 #custom-weather {
-    border-radius: 0px 10px 10px 0px;
-    border-right: 0px;
-    margin-left: 0px;
+    border-radius: 0;
+    border-right: 0;
+    margin-left: 0;
 }
 
 #custom-power {
-    border-radius: 10px;
-    margin-left: 10px;
+    border-radius: 0 10px 10px 0;
     margin-right: 10px;
     padding-left: 8px;
-    padding-right: 12px;
+    padding-right: 14px;
 }

@@ -1,7 +1,7 @@
 window {
     margin: 0px;
-    border: 5px solid #1e1e2e;
-    background-color: #cdd6f4;
+    border: 2px solid #181825;
+    background: rgba(12, 12, 12, 0.8);
     border-radius: 15px;
 }
 
@@ -10,47 +10,51 @@ window {
     margin: 4px;
     padding-left: 20px;
     border: none;
+    border-radius: 15px;
     color: #cdd6f4;
     font-weight: bold;
-    background-color: #1e1e2e;
-    background: ;
+    background: transparent;
    	outline: none;
-    border-radius: 15px;
     margin: 10px;
-    margin-bottom: 2px;
-}
-#input:focus {
-    border: 0px solid #1e1e2e;
-    margin-bottom: 0px;
 }
 
 #inner-box {
     margin: 4px;
-    border: 10px solid #1e1e2e;
+    border: none;
+    border-radius: 15px;
     color: #cdd6f4;
     font-weight: bold;
-    background-color: #1e1e2e;
-    border-radius: 15px;
+    background: transparent;
+    outline: none;
 }
 
 #outer-box {
     margin: 0px;
     border: none;
     border-radius: 15px;
-    background-color: #1e1e2e;
+    padding: 10px 10px 15px 10px;
+    outline: none;
+    background: none;
+    background: transparent;
 }
 
 #scroll {
     margin-top: 5px;
     border: none;
     border-radius: 15px;
-    margin-bottom: 5px;
-    /* background: rgb(255,255,255); */
+    background: transparent;
+    outline: none;
+    margin: -2px 0px;
 }
 
 #img:selected {
-    background-color: #89b4fa;
-    border-radius: 15px;
+    background: transparent;
+}
+
+#text {
+    padding: 0 0 0 8px;
+    background: transparent;
+    outline: none;
 }
 
 #text:selected {
@@ -58,19 +62,22 @@ window {
     margin: 0px 0px;
     border: none;
     border-radius: 15px;
-    background-color: #89b4fa;
+    background: transparent;
+    outline: none;
 }
 
 #entry {
-    margin: 0px 0px;
+    margin: 0;
+    padding: 10px;
     border: none;
     border-radius: 15px;
-    background-color: transparent;
+    background: transparent;
+    outline: none;
 }
 
 #entry:selected {
-    margin: 0px 0px;
+    margin: 0;
     border: none;
-    border-radius: 15px;
-    background-color: #89b4fa;
+    background: rgba(24, 24, 37, 0.8);
+    outline: none;
 }

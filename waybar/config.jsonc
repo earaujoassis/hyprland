@@ -6,9 +6,10 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 50,
-    "modules-left": ["clock", "custom/weather", "hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "network", "bluetooth", "temperature", "battery", "backlight", "pulseaudio", "pulseaudio#microphone", "custom/power"],
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": [],
+    "modules-right": ["tray", "network", "bluetooth", "temperature", "battery", "backlight", "pulseaudio", "pulseaudio#microphone", "custom/weather", "clock", "custom/power"],
+
     "hyprland/window": {
         "format": "{}"
     },
@@ -32,11 +33,11 @@
     },
 
    "custom/weather": {
-        "tooltip" : true,
-        "format" : "{}",
-        "interval" : 30,
-        "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
-        "return-type" : "json"
+        "tooltip": true,
+        "format": "{}",
+        "interval": 600, // every 600 seconds
+        "exec": "~/.config/waybar/scripts/waybar-wttr.py",
+        "return-type": "json"
     },
 
     "custom/power": {
@@ -47,18 +48,21 @@
 
     "tray": {
         "icon-size": 18,
-        "spacing": 10
+        "spacing": 10,
+        "reverse-direction": true
     },
 
     "clock": {
-        "format": " {:%I:%M %p  %a, %b %e}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "format": "{:%a %b %e %I:%M %p}",
+        // "tooltip-format": "<tt><small>{calendar}</small></tt>"
+        "tooltip": false
     },
 
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
         "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip": false,
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-",
         "min-length": 6
@@ -100,6 +104,7 @@
         "format": "{format_source}",
         "format-source": " {volume}%",
         "format-source-muted": " Muted",
+        "tooltip": false,
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
@@ -107,10 +112,12 @@
     },
     
     "temperature": {
-        "thermal-zone": 1,
         "format": "{temperatureC} °C ",
-        "critical-threshold": 80,
-        "format-critical": "{temperatureC} °C "
+        "critical-threshold": 60,
+        "format-critical": "{temperatureC} °C ",
+        "tooltip": false,
+        "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/hwmon5",
+		"input-filename": "temp2_input"
     },
 
     "network": {
