@@ -67,10 +67,10 @@ MOON_PHASES = {
 }
 
 
-def which_weather_icon(weather_code, local_time_str, astronomy_data):
+def which_weather_icon(weather_code, astronomy_data):
     if weather_code != '113' and weather_code != '116':
         return WEATHER_CODES[weather_code]
-    local_time = datetime.strptime(local_time_str, "%Y-%m-%d %I:%M %p").time()
+    local_time = datetime.now().time()
     sunrise_time = datetime.strptime(astronomy_data['sunrise'], "%I:%M %p").time()
     sunset_time = datetime.strptime(astronomy_data['sunset'], "%I:%M %p").time()
 
@@ -89,7 +89,6 @@ if tempint > 0 and tempint < 10:
     extrachar = '+'
 icon = which_weather_icon(
     weather['current_condition'][0]['weatherCode'],
-    weather['current_condition'][0]['localObsDateTime'],
     weather['weather'][0]['astronomy'][0]
 )
 
