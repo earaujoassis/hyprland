@@ -9,4 +9,6 @@ Arch Linux's [U2F documentation](https://wiki.archlinux.org/title/Universal_2nd_
 
 - Use package [yubikey-full-disk-encryption](https://archlinux.org/packages/extra/any/yubikey-full-disk-encryption/) to enroll Yubikey as decryption
 key for LUKS volume. Documentation and full process available at: 
-[github.com/agherzan/yubikey-full-disk-encryption](https://github.com/agherzan/yubikey-full-disk-encryption)
+[github.com/agherzan/yubikey-full-disk-encryption](https://github.com/agherzan/yubikey-full-disk-encryption).
+
+- Setup Secure boot using `sbctl`: instructions based on [this video](https://www.youtube.com/watch?v=yU-SE7QX6WQ).
