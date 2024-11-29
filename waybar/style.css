@@ -89,6 +89,7 @@ tooltip {
 }
 
 #window {
+    padding: 0 12px;
     border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
