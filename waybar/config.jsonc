@@ -8,7 +8,7 @@
     "height": 50,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": [],
-    "modules-right": ["tray", "network", "bluetooth", "temperature", "battery", "backlight", "pulseaudio", "pulseaudio#microphone", "custom/weather", "clock", "custom/power"],
+    "modules-right": ["tray", "network", "bluetooth", "temperature", "battery", "pulseaudio", "pulseaudio#microphone", "custom/weather", "clock", "custom/power"],
 
     "hyprland/window": {
         "format": "{}"
@@ -41,9 +41,9 @@
     },
 
     "custom/power": {
-        "format": "<big></big>",
+        "format": "<big>\uf011</big>",
         "on-click": "wlogout --protocol layer-shell",
-        "tooltip-format": ""
+        "tooltip-format": "Power Options"
     },
 
     "tray": {
@@ -58,52 +58,41 @@
         "tooltip": false
     },
 
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "tooltip": false,
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
-        "min-length": 6
-    },
-
     "battery": {
         "states": {
             "good": 95,
             "warning": 30,
             "critical": 20
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format": "{icon}  {capacity}%",
+        "format-charging": "\udb80\udc84  {capacity}%",
+        "format-plugged": "\udb80\udc85  {capacity}%",
+        "format-icons": ["\udb80\udc7a", "\udb80\udc7b", "\udb80\udc7c", "\udb80\udc7d", "\udb80\udc7e", "\udb80\udc7f", "\udb80\udc80", "\udb80\udc81", "\udb80\udc82", "\udb80\udc79"]
     },
 
     "pulseaudio": {
         "format": "{icon}  {volume}%",
         "tooltip": false,
-        "format-muted": " Muted",
+        "format-muted": "\udb81\udf5f  Muted",
         "on-click": "pamixer -t",
         "on-scroll-up": "pamixer -i 5",
         "on-scroll-down": "pamixer -d 5",
         "scroll-step": 5,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": "\udb80\udecb",
+            "hands-free": "\uf2a0",
+            "headset": "\udb80\udece",
+            "phone": "\uf42c",
+            "portable": "\udb81\udcc3",
+            "car": "\udb80\udd0d",
+            "default": ["\udb81\udd7f", "\udb81\udd80", "\udb81\udd7e"]
         }
     },
 
     "pulseaudio#microphone": {
         "format": "{format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": " Muted",
+        "format-source": "\uf130  {volume}%",
+        "format-source-muted": "\uf131  Muted",
         "tooltip": false,
         "on-click": "pamixer --default-source -t",
         "on-scroll-up": "pamixer --default-source -i 5",
@@ -112,30 +101,34 @@
     },
     
     "temperature": {
-        "format": "{temperatureC} °C ",
+        "format": "{temperatureC} °C \uf2c9",
         "critical-threshold": 60,
-        "format-critical": "{temperatureC} °C ",
-        "tooltip": false,
+        "format-critical": "{temperatureC} °C \uf2c7",
+        "tooltip-format": "Core Temperature",
         "hwmon-path-abs": "/sys/devices/platform/coretemp.0/hwmon/hwmon5",
-		"input-filename": "temp2_input"
+        "input-filename": "temp2_input"
     },
 
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "  {signalStrength}%",
-        "format-ethernet": "{ipaddr}/{cidr}",
-        "tooltip-format": "{essid} - {ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
+        "format-wifi": "\udb81\udda9",
+        "format-ethernet": "\udb80\ude01 ",
+        "format-linked": "\udb85\udeb5",
+        "format-disconnected": "\udb81\uddaa",
+        "tooltip-format-ethernet": "{ifname}: {ipaddr} via {gwaddr}",
+        "tooltip-format-wifi": "{ifname}: {ipaddr} via {gwaddr} ({essid})",
+        "tooltip-format-disconnected": "Disconnected"
     },
 
     "bluetooth": {
-	    "format": " {status}",
-	    "format-disabled": "", // an empty format will hide the module
-	    "format-connected": " {num_connections}",
-	    "tooltip-format": "{device_alias}",
-	    "tooltip-format-connected": " {device_enumerate}",
-	    "tooltip-format-enumerate-connected": "{device_alias}"
+        "format": "\udb80\udcaf",
+        "format-disabled": "\udb80\udcb2", // an empty format will hide the module
+        "format-connected": "\udb80\udcaf {num_connections}",
+        "tooltip-format-on": "Bluetooth On",
+        "tooltip-format-off": "Bluetooth Off",
+        "tooltip-format-disabled": "Bluetooth Disabled",
+        "tooltip-format": "{device_alias}",
+        "tooltip-format-connected": "\udb80\udcaf {device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}"
     }
 }

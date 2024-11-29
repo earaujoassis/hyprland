@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "Ubuntu Nerd Font";
     font-weight: bold;
     font-size: 14px;
     min-height: 0;
@@ -59,30 +59,25 @@ tooltip {
 #bluetooth,
 #temperature,
 #workspaces,
-#tray,
-#backlight {
+#tray {
     background: #1e1e2e;
     opacity: 0.8;
-    padding: 0 10px;
-    margin: 3px 0;
+    padding: 0 8px;
+    margin: 2px 0;
     margin-top: 10px;
     border: 1px solid #181825;
+    border-left: 0;
+    border-right: 0;
 }
 
 #temperature {
     border-radius: 0;
 }
 
-#temperature.critical {
-    color: #eba0ac;
-}
-
-#backlight {
-    border-radius: 0;
-}
-
 #tray {
     border-radius: 10px 0 0 10px;
+    border-left: 1px;
+    padding-left: 14px;
 }
 
 #workspaces {
@@ -104,56 +99,44 @@ window#waybar.empty #window {
 }
 
 #clock {
-    color: #fab387;
     border-radius: 0;
-    border-right: 0;
 }
 
 #network {
-    color: #f9e2af;
     border-radius: 0;
-    border-left: 0;
-    border-right: 0;
 }
 
 #bluetooth {
-    color: #89b4fa;
     border-radius: 0;
     margin-right: 0;
-    border-right: 0;
-    border-left: 0;
 } 
 
 #pulseaudio {
-    color: #89b4fa;
-    border-left: 0;
-    border-right: 0;
+    border-radius: 0;
 }
 
 #pulseaudio.microphone {
-    color: #cba6f7;
-    border-left: 0;
-    border-right: 0;
     border-radius: 0;
 }
 
 #battery {
-    color: #a6e3a1;
     border-radius: 0;
     margin-right: 0;
-    border-left: 0;
-    border-right: 0;
 }
 
 #custom-weather {
     border-radius: 0;
-    border-right: 0;
     margin-left: 0;
 }
 
 #custom-power {
     border-radius: 0 10px 10px 0;
     margin-right: 10px;
-    padding-left: 8px;
-    padding-right: 14px;
+    padding-right: 16px;
+    border-right: 1px;
+}
+
+#custom-power big {
+    font-size: 20px;
+    font-weight: bolder;
 }
