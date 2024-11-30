@@ -7,8 +7,8 @@
 # A list of packages installed is available at packages.md.
 #
 
-export HYPRLAND_HOME=$HOME/hyprland
-export CFG_FOLDER=$HOME/.config
+HYPRLAND_HOME=$HOME/hyprland
+CFG_FOLDER=$HOME/.config
 
 #### Check for yay ####
 ISYAY=/sbin/yay
@@ -116,7 +116,6 @@ read -n1 -rep '> Would you like to copy all configuration files? (y,n) ' CFG
 if [[ $CFG == "Y" || $CFG == "y" ]]; then
     echo -e "Copying config files...\n"
     cp -R $HYPRLAND_HOME/hypr $CFG_FOLDER/
-    cp -R $HYPRLAND_HOME/alacritty $CFG_FOLDER/
     cp -R $HYPRLAND_HOME/mako $CFG_FOLDER/
     cp -R $HYPRLAND_HOME/waybar $CFG_FOLDER/
     cp -R $HYPRLAND_HOME/wofi $CFG_FOLDER/
@@ -127,17 +126,6 @@ if [[ $CFG == "Y" || $CFG == "y" ]]; then
     # Set some files as exacutable 
     chmod +x $CFG_FOLDER/hypr/xdg-portal-hyprland
     chmod +x $CFG_FOLDER/waybar/scripts/waybar-wttr.py
-fi
-
-### Install the starship shell ###
-read -n1 -rep '> Would you like to install starship? (y,n) ' STAR
-if [[ $STAR == "Y" || $STAR == "y" ]]; then
-    echo -e "> Installing starship...\n"
-    yay -S --noconfirm starship
-    echo -e "> Updating .bashrc to load starship...\n"
-    echo -e '\neval "$(starship init bash)"' >> ~/.bashrc
-    echo -e "> Copying starship config file to $CFG_FOLDER ...\n"
-    cp starship/starship.toml $CFG_FOLDER/
 fi
 
 ### Script is complete ###
