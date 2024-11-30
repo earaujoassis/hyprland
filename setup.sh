@@ -113,7 +113,8 @@ fi
 
 ### Copy configuration files ###
 read -n1 -rep '> Would you like to copy all configuration files? (y,n) ' CFG
-if [[ $CFG == "Y" || $CFG == "y" ]]; then
+if [[ $CFG == "Y" || $CFG == "y" ]]
+then
     echo -e "Copying config files...\n"
     cp -R $HYPRLAND_HOME/hypr $CFG_FOLDER/
     cp -R $HYPRLAND_HOME/mako $CFG_FOLDER/
@@ -132,7 +133,8 @@ fi
 echo -e "> Script has completed.\n"
 echo -e "> You can start Hyprland by typing 'Hyprland' on terminal.\n"
 read -n1 -rep '> Would you like to start Hyprland now? (y,n) ' HYP
-if [[ $HYPRLAND == "Y" || $HYPRLAND == "y" ]]; then
+if [[ $HYPRLAND == "Y" || $HYPRLAND == "y" ]]
+then
     exec Hyprland
 else
     exit

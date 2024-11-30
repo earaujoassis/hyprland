@@ -4,7 +4,8 @@ set -o nounset
 set -o errexit
 
 blur-image() {
-  if [[ $# != 2 ]]; then
+  if [[ $# != 2 ]]
+  then
     echo -e "Usage:\n$ ${FUNCNAME[0]} <input> <output>"
     exit 1
   fi
