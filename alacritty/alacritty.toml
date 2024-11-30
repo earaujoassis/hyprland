@@ -3,6 +3,7 @@ blinking = "Always"
 shape = "Block"
 
 [font]
+normal ={ family = "JetbrainsMono Nerd Font", style = "regular" }
 size = 14.0
 
 [scrolling]

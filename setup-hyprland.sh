@@ -39,16 +39,65 @@ read -n1 -rep '> Would you like to install all the necessary packages? (y,n) ' I
 if [[ $INSTALL == "Y" || $INSTALL == "y" ]]
 then
     echo -e "> Installing all necessary packages through yay"
-    yay -S --noconfirm code htop btop tmux zsh less kitty chromium \
-    gtk-engine-murrine xsel sof-firmware uwsm \
-    hyprland hyprlock hypridle alacritty enpass gtk2-engines waybar \
-    cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python \
-    swaybg wofi wlogout mako thunar \
-    ttf-jetbrains-mono-nerd ttf-fira-sans ttf-font-awesome noto-fonts-emoji \
-    polkit-gnome python-requests \
-    swappy grim slurp pamixer brightnessctl gvfs \
-    bluez bluez-utils lxappearance xfce4-settings \
-    dracula-gtk-theme dracula-icons-git xdg-desktop-portal-hyprland
+    yay -S --noconfirm \
+        htop \
+        btop \
+        zsh \
+        tmux \
+        less \
+        ripgrep \
+        pkg-config \
+        make \
+        cmake \
+        libxcb \
+        libxkbcommon \
+        gtk-engine-murrine \
+        xsel \
+        sof-firmware \
+        uwsm \
+        hyprland \
+        hyprlock \
+        hypridle \
+        waybar \
+        swaybg \
+        wofi \
+        wlogout \
+        mako \
+        swappy \
+        hyprpolkitagent \
+        xdg-desktop-portal-hyprland \
+        polkit-gnome \
+        gtk2-engines \
+        python \
+        python-requests \
+        grim \
+        slurp \
+        pamixer \
+        brightnessctl \
+        gvfs \
+        bluez \
+        bluez-utils \
+        lxappearance \
+        xfce4-settings \
+        dracula-gtk-theme \
+        dracula-icons-git \
+        freetype2 \
+        fontconfig \
+        ttf-jetbrains-mono-nerd \
+        ttf-fira-sans \
+        ttf-font-awesome \
+        noto-fonts-emoji \
+        thunar \
+        kitty \
+        alacritty \
+        enpass \
+        chromium \
+        brave \
+        visual-studio-code-bin \
+        neovim \
+        vim \
+        docker-desktop \
+        spotify-launcher
 
     # Start the bluetooth service
     echo -e "> Starting the Bluetooth Service...\n"
@@ -57,7 +106,9 @@ then
     
     # Clean out other portals
     echo -e "> Cleaning out conflicting xdg portals...\n"
-    yay -R --noconfirm xdg-desktop-portal-gnome xdg-desktop-portal-gtk
+    yay -R --noconfirm \
+        xdg-desktop-portal-gnome \
+        xdg-desktop-portal-gtk
 fi
 
 ### Copy configuration files ###
