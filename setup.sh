@@ -63,6 +63,7 @@ then
         wofi \
         wlogout \
         mako \
+        wl-clipboard \
         swappy \
         hyprpolkitagent \
         xdg-desktop-portal-hyprland \
