@@ -118,6 +118,7 @@ then
     echo -e "Copying config files...\n"
     cp -R $HYPRLAND_HOME/hypr $CFG_FOLDER/
     cp -R $HYPRLAND_HOME/mako $CFG_FOLDER/
+    cp -R $HYPRLAND_HOME/clipse $CFG_FOLDER/
     cp -R $HYPRLAND_HOME/waybar $CFG_FOLDER/
     cp -R $HYPRLAND_HOME/wofi $CFG_FOLDER/
     cp -R $HYPRLAND_HOME/wlogout $CFG_FOLDER/

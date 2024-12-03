@@ -10,6 +10,7 @@ then
     echo "> Updating config files..."
     cp -fR $HYPRLAND_HOME/hypr $CFG_FOLDER/
     cp -fR $HYPRLAND_HOME/mako $CFG_FOLDER/
+    cp -fR $HYPRLAND_HOME/clipse $CFG_FOLDER/
     cp -fR $HYPRLAND_HOME/waybar $CFG_FOLDER/
     cp -fR $HYPRLAND_HOME/wofi $CFG_FOLDER/
     cp -fR $HYPRLAND_HOME/wlogout $CFG_FOLDER/
